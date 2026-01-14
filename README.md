@@ -61,7 +61,7 @@ The API will be available at http://localhost:8000
 
 Navigate to the frontend directory:
 
-    cd frontend
+    cd text-summarizer-frontend
 
 Install dependencies:
 
