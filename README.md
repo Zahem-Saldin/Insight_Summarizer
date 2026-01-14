@@ -70,11 +70,13 @@ Start the development server:
   The dashboard will be available at http://localhost:3000
 
 🛰️ API Endpoints
-Method	Endpoint	Description
-POST	/api/process-text	Process PDF/Text for summary, sentiment, and topics.
-GET	/api/summaries	Retrieve all historical processing results.
-GET	/api/evaluate-summary/{id}	Calculate ROUGE scores against a reference summary.
-DELETE	/api/summaries/{id}	Remove a stored summary from the database.
+
+  Method	Endpoint	                  Description
+  POST	  /api/process-text	Process   PDF/Text for summary, sentiment, and topics.
+  GET	    /api/summaries	            Retrieve all historical processing results.
+  GET	    /api/evaluate-summary/{id}	Calculate ROUGE scores against a reference summary.
+  DELETE	/api/summaries/{id}	        Remove a stored summary from the database.
+
 🧪 Evaluation System
 
 The system evaluates text quality using standard NLP metrics:
