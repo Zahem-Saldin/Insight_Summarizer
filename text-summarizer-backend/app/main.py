@@ -3,6 +3,8 @@ from fastapi import FastAPI, File, Form, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
+import os
+from dotenv import load_dotenv
 from pymongo.errors import PyMongoError
 from . import sentiment_analysis
 from . import keyword_extraction
@@ -11,6 +13,24 @@ from . import evaluation
 from . import summarizer
 import fitz
 import httpx
+from dotenv import load_dotenv
+from dotenv import load_dotenv
+import os
+from pathlib import Path
+from motor.motor_asyncio import AsyncIOMotorClient
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
+
+MONGO_URI = os.getenv("MONGO_URI")
+MONGO_DB = os.getenv("MONGO_DB", "IRWA")
+
+if not MONGO_URI:
+    raise RuntimeError("MONGO_URI is not set in environment variables")
+
+client = AsyncIOMotorClient(MONGO_URI)
+db = client[MONGO_DB]
+
 
 app = FastAPI()
 
@@ -21,9 +41,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-client = AsyncIOMotorClient('mongodb+srv://Raptor:Raptor26@cluster0.7bkfx.mongodb.net/')
-db = client['IRWA']
 
 async def check_mongo_connection():
     try:
