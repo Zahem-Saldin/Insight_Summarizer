@@ -1,5 +1,7 @@
 📝 NLP Insight Engine: Text Summarization & Analysis
 
+![Image](https://github.com/user-attachments/assets/c82610c6-1b23-4682-b5a9-fed4445022e2)
+
 A powerful full-stack application designed to process large text documents or PDFs. This tool leverages state-of-the-art Transformer models (BART, DistilBERT) to provide automated summarization, sentiment analysis, keyword extraction, and topic modeling, all backed by a robust FastAPI backend and a React-based frontend.
 
 ✨ Key Features
